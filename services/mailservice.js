@@ -4,21 +4,36 @@ const mailService={}
 
 mailService.sendMail=async  (data)=>{
   let transporter = nodemailer.createTransport({
-    host: 'smtp.mailtrap.io',
+    host: 'email-smtp.us-east-2.amazonaws.com',
+    // host: 'smtp.mailtrap.io',
     port: 587,
     auth: {
-        user: '4af27f51053216',
-        pass: '02c68ff507fc4a'
+        user: 'AKIAY6URLYIG54XPWCSL',
+        pass: 'BKwT0H9F70HsvwHZb3B6TM3lc5DzN+AoXsnKMutVvOnb'
     },
+    // auth:{
+    //   user:'4af27f51053216',
+    //   pass:'02c68ff507fc4a'
+    // }
   });
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
-    from: 'you', // sender address
-    to: "karanamc3@gmail.com", // list of receivers
+    from: 'karanamchaitanyapramod@gmail.com', // sender address
+    to: "karanamchaitanyapramod@gmail.com", // list of receivers
     subject: "visitor details", // Subject line
-    text: data.name +" "+"has sent message"+" "+data.message+ " "+"his contact details are:"+ data.email+ " , "+data.contactNo, // plain text body
-    html: "<p>data.message</p>", // html body
+    html: `<div style="text-align: center;margin-top:14vh">
+    <h1 style="color: red;">Hello chethu</h1>
+    <h2 style="color: royalblue;"> ${data.name} has sent a message</h2>
+    <p style="font-size: 24px;color:#000;">${data.message}</p><br>
+    <div style="font-weight: 400;">
+    <span style="font-weight: 600;">His contact details are</span>
+    <div style="font-size: 32px;">
+        email:<span style="font-size: 36px;">${data.email}</span><br>
+        phoneno:<span  style="font-size: 36px;">${data.contactNo}</span>
+    </div>
+</div>
+</div>`
   });
 
   // console.log("Message sent: %s", info.messageId);
