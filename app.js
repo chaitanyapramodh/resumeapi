@@ -36,8 +36,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-app.listen(4444,()=>{
+app.listen(process.env.PORT || 4444,()=>{
   console.log("app listening in port 4444")
 })
-
+ 
 module.exports = app;
