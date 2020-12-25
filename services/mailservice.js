@@ -4,12 +4,12 @@ const mailService={}
 
 mailService.sendMail=async  (data)=>{
   let transporter = nodemailer.createTransport({
-    host: 'email-smtp.us-east-2.amazonaws.com',
-    // host: 'smtp.mailtrap.io',
-    port: 587,
+    // host: 'email-smtp.us-east-2.amazonaws.com',
+    host: 'mail.aurasol.in',
+    port: 465,
     auth: {
-        user: 'AKIAY6URLYIG54XPWCSL',
-        pass: 'BKwT0H9F70HsvwHZb3B6TM3lc5DzN+AoXsnKMutVvOnb'
+        user: 'chaitanya@aurasol.in',
+        pass: 'QUjSN3]3W83r'
     },
     // auth:{
     //   user:'4af27f51053216',
@@ -19,8 +19,8 @@ mailService.sendMail=async  (data)=>{
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
-    from: 'karanamchaitanyapramod@gmail.com', // sender address
-    to: "karanamchaitanyapramod@gmail.com", // list of receivers
+    from: 'chaitanya@aurasol.in', // sender address
+    to: "chaitanya@aurasol.in", // list of receivers
     subject: "visitor details", // Subject line
     html: `<div style="text-align: center;margin-top:14vh">
     <h1 style="color: red;">Hello chethu</h1>
