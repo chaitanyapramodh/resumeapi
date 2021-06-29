@@ -3,14 +3,7 @@ const nodemailer = require('nodemailer');
 const mailService={}
 
 mailService.sendMail=async  (data)=>{
-  let transporter = nodemailer.createTransport({
-    host: 'email-smtp.us-east-2.amazonaws.com',
-    // host: 'smtp.mailtrap.io',
-    port: 587,
-    auth: {
-        user: 'AKIAY6URLYIG54XPWCSL',
-        pass: 'BKwT0H9F70HsvwHZb3B6TM3lc5DzN+AoXsnKMutVvOnb'
-    },
+  
     // auth:{
     //   user:'4af27f51053216',
     //   pass:'02c68ff507fc4a'
